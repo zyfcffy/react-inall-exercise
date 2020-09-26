@@ -1,5 +1,5 @@
 import React from 'react';
-import './home.less';
+import './Home.less';
 import {Link} from "react-router-dom";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
     </div>
     <div className="content">
       <Link to="/caculator" className="link">计算器</Link>
-
+      <Link to="/time" className="link">倒计时器</Link>
     </div>
   </div>
   );

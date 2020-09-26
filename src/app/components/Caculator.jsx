@@ -13,7 +13,6 @@ class Caculator extends  Component {
             ["1", "2", "3"],
             ["0"]
         ],
-        
     }
 
     handleClick = (event) =>{
@@ -48,23 +47,9 @@ class Caculator extends  Component {
                 <div className = "caculator">
                     <textarea className="result" value={this.state.data} readOnly='readonly'></textarea>
                     <br/>
-                    <button className="btn btn-warning" type="button" value="+" onClick={this.handleClick}>+</button>
-                    <button className="btn btn-warning" type="button" value="-" onClick={this.handleClick}>-</button>
-                    <button className="btn btn-warning" type="button" value="*" onClick={this.handleClick}>*</button>
-                    <br/>
-                    <button className="btn btn-primary" type="button" value="7" onClick={this.handleClick}>7</button>
-                    <button className="btn btn-primary" type="button" value="8" onClick={this.handleClick}>8</button>
-                    <button className="btn btn-primary" type="button" value="9" onClick={this.handleClick}>9</button>
-                    <br/>
-                    <button className="btn btn-primary" type="button" value="4" onClick={this.handleClick}>4</button>
-                    <button className="btn btn-primary" type="button" value="5" onClick={this.handleClick}>5</button>
-                    <button className="btn btn-primary" type="button" value="6" onClick={this.handleClick}>6</button>
-                    <br/>
-                    <button className="btn btn-primary" type="button" value="1" onClick={this.handleClick}>1</button>
-                    <button className="btn btn-primary" type="button" value="2" onClick={this.handleClick}>2</button>
-                    <button className="btn btn-primary" type="button" value="3" onClick={this.handleClick}>3</button>
-                    <br/>
-                    <button className="btn btn-primary" type="button" value="0" onClick={this.handleClick}>0</button>
+                    {this.state.buttonValue.map(group => group.map(value => 
+                    <button className="btn btn-warning" type="button" value={value} onClick={this.handleClick}>{value}</button>
+                        )).join((<br/>))}
                     <button className="btn btn-danger" type="button" onClick={()=>this.setState({data:''})}>Clear</button>
                     <button className="btn btn-success" type="button" onClick={this.handleCaculate}>=</button>
                 </div>
